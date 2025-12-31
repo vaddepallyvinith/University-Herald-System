@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UoH Herald System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <!-- LOGIN SECTION -->
+    <div id="login-section" class="container glass-panel">
+        <div class="university-logo">
+            <i class="fa-solid fa-graduation-cap"></i>
+        </div>
+        <h1>University of Hyderabad</h1>
+        <p class="subtitle">Herald System</p>
+        <form id="login-form">
+            <div class="input-group">
+                <i class="fa-solid fa-user"></i>
+                <input type="text" id="userid" placeholder="User ID" required>
+            </div>
+            <div class="input-group">
+                <i class="fa-solid fa-lock"></i>
+                <input type="password" id="password" placeholder="Password" required>
+            </div>
+            <button type="submit" class="btn-primary">Login <i class="fa-solid fa-arrow-right"></i></button>
+        </form>
+    </div>
+
+    <!-- DASHBOARD SECTION -->
+    <div id="dashboard-section" class="container hidden">
+        <nav class="glass-nav">
+            <div class="logo">
+                <i class="fa-solid fa-university"></i> Univ. of Hyderabad
+            </div>
+            <div class="nav-right">
+                <span id="user-display">User</span>
+                <button id="logout-btn" class="btn-sm"><i class="fa-solid fa-sign-out-alt"></i></button>
+            </div>
+        </nav>
+
+        <main>
+            <div class="header-actions">
+                <h2>Latest Articles</h2>
+                <button id="create-btn" class="btn-primary hidden">
+                    <i class="fa-solid fa-plus"></i> New Article
+                </button>
+            </div>
+
+            <div id="articles-grid" class="articles-grid">
+                <!-- Articles injected here -->
+            </div>
+        </main>
+    </div>
+
+    <!-- MODAL FOR CREATE/EDIT -->
+    <div id="article-modal" class="modal hidden">
+        <div class="modal-content glass-panel">
+            <h2 id="modal-title">New Article</h2>
+            <input type="hidden" id="edit-original-name">
+            <div class="input-group">
+                <input type="text" id="article-name" placeholder="Article Title" required>
+            </div>
+            <div class="input-group">
+                <textarea id="article-content" placeholder="Content..." rows="5" required></textarea>
+            </div>
+            <div class="modal-actions">
+                <button id="cancel-modal" class="btn-secondary">Cancel</button>
+                <button id="save-article" class="btn-primary">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
