@@ -1,0 +1,3 @@
+admin01,adminpass,Admin
+fac123,facpass1,Faculty
+fac456,facpass2,Faculty
